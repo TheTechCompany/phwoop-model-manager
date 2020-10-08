@@ -1,3 +1,9 @@
+html, body, .App, #root{
+  height: 100vh;
+  display: flex;
+  flex: 1;
+}
+
 .App {
   text-align: center;
 }

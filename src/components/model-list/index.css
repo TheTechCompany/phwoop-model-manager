@@ -1,0 +1,9 @@
+.model-list .MuiCollapse-wrapperInner canvas{
+  width: 100%;
+  z-index: 1;
+}
+
+.model-list .MuiCollapse-wrapperInner{
+  position: relative;
+}
+
