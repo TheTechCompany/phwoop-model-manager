@@ -1,0 +1,12 @@
+.ipfs-input{
+  display: flex;
+  flex-direction: column;
+}
+
+.ipfs-input .react-ipfs-dropzone{
+  padding: 8px;
+  min-height: 80px;
+  margin-top: 8px;
+  border: 2px dashed #dfdfdf;
+  border-radius: 5px;
+}

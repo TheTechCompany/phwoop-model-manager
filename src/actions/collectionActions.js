@@ -9,9 +9,9 @@ export function getCollections(){
   }
 }
 
-export function addCollection(name){
+export function addCollection(type, name){
   return (dispatch, getState) => {
-    return fetch(`${conf.baseURL}/collections`, {
+    return fetch(`${conf.baseURL}/collections/${type}`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

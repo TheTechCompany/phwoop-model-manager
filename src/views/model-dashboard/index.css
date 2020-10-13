@@ -1,18 +1,27 @@
+.model-dashboard__body{
+  display: flex;
+  flex: 1;
+  background: #dfdfdf;
+}
+
+.model-dashboard__sidebar{
+  display: flex;
+  
+}
+
 .model-dashboard{
   flex: 1;
   display: flex;
 }
 
 .collection-list{
-  width: 250px;
   display: flex;
-  background: red;
+
 }
 
 .model-list{
   background: green;
   flex: 1;
-  flex-direction: column;
   display: flex;
   padding: 12px;
 }

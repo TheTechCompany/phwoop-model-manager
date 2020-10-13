@@ -12,8 +12,8 @@ function App() {
     <Provider store={store}>
     <Router>
     <div className="App">
-      <Route path="/" exact component={ModelDashboard} />
-      <Route path="/:id" component={ModelDashboard} />
+      <Route path="/" component={ModelDashboard} />
+      <Route path="/component/:id" component={ModelDashboard} />
     </div>
   </Router>
 </Provider>

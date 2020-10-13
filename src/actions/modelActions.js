@@ -3,9 +3,10 @@ const conf = require('../conf')
 
 export function getModels(collection){
   return (dispatch, getState) => {
-    return fetch(`${conf.baseURL}/collections/${collection}`).then((r) => r.json()).then((r) => {
+    return fetch(`${conf.baseURL}/collections/id/${collection}`).then((r) => r.json()).then((r) => {
       console.log(r)
       if(!r.error){
+        console.log(r)
         dispatch({type: types.SET_MODELS, list: r.items})
       }
     })
@@ -14,7 +15,7 @@ export function getModels(collection){
 
 export function addModel(collection, name, ipfs){
   return (dispatch, getState) => {
-    return fetch(`${conf.baseURL}/collections/${collection}`, {
+    return fetch(`${conf.baseURL}/collections/id/${collection}`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

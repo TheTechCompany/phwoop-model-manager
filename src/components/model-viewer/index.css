@@ -1,7 +1,8 @@
 .model-viewer{
   position: relative;
+  margin-right: 12px;
 }
 
 .model-viewer canvas{
-  width: 100%;
+  width: 50vw;
 }

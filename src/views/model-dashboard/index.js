@@ -1,5 +1,15 @@
 import React from 'react';
 import IPFS from 'ipfs';
+import MenuSidebar from '../../components/menu-sidebar';
+
+import { Switch, Route } from 'react-router-dom';
+
+import CharacterView from '../character-view';
+import BuildingView from '../building-view';
+import NatureView from '../nature-view';
+import MediaView from '../media-view';
+
+import ModelControls from '../../components/model-controls';
 import ModelViewer from '../../components/model-viewer';
 import ModelList from '../../components/model-list';
 import CollectionList from '../../components/collection-list';
@@ -11,37 +21,34 @@ function ModelDashboard(props){
   const [ selectedModel, setSelectedModel ] = React.useState({});
 
   const [ipfs, setIPFS] = React.useState(null);
-
+console.log(props)
   React.useEffect(() => {
     async function startIPFS(){
-      let ipfs = await IPFS.create();
+      if(!window.ipfs) window.ipfs = await IPFS.create();
 
-      const id = await ipfs.id()
+      const id = await window.ipfs.id()
       console.log("IPFS", id)
-      setIPFS(ipfs)
+      setIPFS(window.ipfs)
     }
     startIPFS()
-    props.getCollections()
+
   }, [])
 
   return (
     <div className="model-dashboard">
-      <div className="collection-list">
-        <CollectionList />
+      <div className="model-dashboard__sidebar">
+        <MenuSidebar />
       </div>
-      <div className="model-list">
-        <ModelViewer 
-          ipfs={ipfs}
-          model={selectedModel} />
-        <ModelList 
-          onSelect={(model) => setSelectedModel(model)}
-          ipfs={ipfs}
-          collection={props.match.params.id} />
+      <div className="model-dashboard__body">
+        <Switch>
+          <Route path={`/:type`} component={MediaView} exact />
+          <Route path={`/:type/:id`} component={MediaView} />
+        </Switch>
       </div>
     </div>
   );
 }
 
 export default connect(null, (dispatch) => ({
-  getCollections: () => dispatch(getCollections())
+  getCollections: () => dispatch(getCollections('characters'))
 }))(ModelDashboard)

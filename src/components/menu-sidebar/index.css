@@ -1,0 +1,17 @@
+.menu-option svg{
+  font-size: 33px;
+}
+
+.menu-option{
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+}
+
+.menu-option.selected{
+  background: #efefef;
+}
+
+.menu-option:hover{
+  background: #dfdfdf;
+}

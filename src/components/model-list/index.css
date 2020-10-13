@@ -3,6 +3,10 @@
   z-index: 1;
 }
 
+.model-list .MuiPaper-root{
+  overflow-y: scroll;
+}
+
 .model-list .MuiCollapse-wrapperInner{
   position: relative;
 }

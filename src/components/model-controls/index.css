@@ -1,0 +1,4 @@
+.control-col{
+  display: flex;
+  flex-direction: column;
+}
