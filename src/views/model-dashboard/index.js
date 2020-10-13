@@ -4,9 +4,6 @@ import MenuSidebar from '../../components/menu-sidebar';
 
 import { Switch, Route } from 'react-router-dom';
 
-import CharacterView from '../character-view';
-import BuildingView from '../building-view';
-import NatureView from '../nature-view';
 import MediaView from '../media-view';
 
 import ModelControls from '../../components/model-controls';
